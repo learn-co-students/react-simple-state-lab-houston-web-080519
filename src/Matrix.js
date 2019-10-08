@@ -1,9 +1,28 @@
+
+
 import React, { Component } from 'react';
+import Cell from './cell.js';
 
 export default class Matrix extends Component {
+
+  static defaultProps = {
+      values: [
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ],
+        [ '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00' ]
+    ]
+  }
   
   genRow = (vals) => (
-    vals.map(val => <div className="cell"></div>) // replace me and render a cell component instead!
+    vals.map(val => <Cell value = {val} stuff="stuff"/>
+    ) // replace me and render a cell component instead!
   )
   
   genMatrix = () => (
@@ -11,8 +30,10 @@ export default class Matrix extends Component {
   )
   
   render() {
+    // debugger
     return (
       <div id="matrix">
+        
         {this.genMatrix()}
       </div>
     )
